@@ -8,14 +8,14 @@
 
 <ul class="anchor">
 <% @restaurants.each do |restaurant| %>
-<li class="anchor">  <%= link_to(restaurant.name.capitalize, restaurant_path(restaurant))  %></li>
+<h3 class="anchor">  <%= link_to(restaurant.name.capitalize, restaurant_path(restaurant))  %></h3>
 <% end %>
 </ul>
 
 </div>
 
 <h4 class="container">
-<a href="/restaurants/new">Create new restaurant</a>
+<a href="/restaurants/new">+ Create new restaurant</a>
 </h4>
 
 </div>

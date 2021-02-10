@@ -12,10 +12,21 @@
   <% @restaurant.reviews.each do |review| %>
   <li> Review: <%= review.content %>
   <%= link_to(review_path(review), method: :delete, data: { confirm: "ARE YOU SURE ?"}) do %>
-    <i class="fas fa-trash-alt"></i>
+    <i class="fas fa-trash-alt"> </i>
     <% end %>
   </li>
-  Rating: <%= review.rating %> <br>
+  <% if review.rating == 5
+        review = "⭐️⭐️⭐️⭐️⭐️"
+    elsif review.rating == 4
+        review = "⭐️⭐️⭐️⭐️" 
+    elsif review.rating == 3
+        review = "⭐️⭐️⭐️"
+    elsif review.rating == 2
+        review = "⭐️⭐️"
+    elsif review.rating == 1
+        review = "⭐️" 
+    end%>
+  Rating: <%= "#{review}" %> <br>
   <br>
   <%end  %>
   <br>
