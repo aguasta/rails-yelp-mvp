@@ -1,0 +1,23 @@
+<div class="bigcontainer">
+<div class="container">
+
+<h1>All Restaurants 🍝</h1>
+</div>
+
+<div class="container">
+
+<ul class="anchor">
+<% @restaurants.each do |restaurant| %>
+<li class="anchor">  <%= link_to(restaurant.name.capitalize, restaurant_path(restaurant))  %></li>
+<% end %>
+</ul>
+
+</div>
+
+<h4 class="container">
+<a href="/restaurants/new">Create new restaurant</a>
+</h4>
+
+</div>
+
+
