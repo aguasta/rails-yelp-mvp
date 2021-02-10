@@ -1,0 +1,19 @@
+<div class="bigcontainer">
+<h1 class="container"> <%=@restaurant.name.capitalize  %>🍝</h1>
+
+</div>
+
+<h5 class="container">Address: <%= @restaurant.address  %> </h5> 
+<h5 class="container">Phone: <%= @restaurant.phone_number  %> </h5> 
+
+<br>
+<div class="container">
+<%= link_to("Click to Edit", edit_restaurant_path(@restaurant)) %> 
+</div>
+
+
+<h4 class="container">
+<a href="/restaurants">Back to all Restaurants</a>
+</h4>
+
+</div>
