@@ -5,19 +5,19 @@
 <div class="container">
 <%= simple_form_for(@restaurant) do |f|  %>
     <%= f.label :name  %>
-    <%= f.text_field :name  %>
+    <%= f.text_field :name  %> <br>
     <%= f.label :address  %>
-    <%= f.text_field :address  %>
+    <%= f.text_field :address  %> <br>
     <%= f.label :phone_number  %>
-    <%= f.text_field :phone_number  %>
+    <%= f.text_field :phone_number  %> <br>
     <%= f.label :category  %>
-    <%= f.text_field :category  %>
+    <%= f.text_field :category  %> <br>
      <%= f.submit  %>
 <% end %>
 </div>
 
 
-
+<br>
 <h4 class="container">
 <a href="/restaurants">Back to all Restaurants</a>
 </h4>

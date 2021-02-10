@@ -18,7 +18,10 @@ class ReviewsController < ApplicationController
 
     def destroy 
         @review = Review.find(params[:id])
+        @review.destroy 
         redirect_to restaurant_path(@review.restaurant)
+        
+
 
     end 
 
@@ -26,6 +29,6 @@ class ReviewsController < ApplicationController
 
     def review_params
 
-        params.require(:review).permit(:content)
+        params.require(:review).permit(:content, :rating)
     end 
 end

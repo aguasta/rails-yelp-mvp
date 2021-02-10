@@ -4,13 +4,32 @@
 </div>
 
 <h5 class="container">Address: <%= @restaurant.address  %> </h5> 
-<h5 class="container">Phone: <%= @restaurant.phone_number  %> </h5> 
+<h6 class="container">Phone: <%= @restaurant.phone_number  %> </h6>
+<h6 class="container">Category: <%= @restaurant.category  %> </h6> 
+
+<h6 class="container">Reviews: 
+<ul> <br>
+  <% @restaurant.reviews.each do |review| %>
+  <li> Review: <%= review.content %>
+  <%= link_to(review_path(review), method: :delete, data: { confirm: "ARE YOU SURE ?"}) do %>
+    <i class="fas fa-trash-alt"></i>
+    <% end %>
+  </li>
+  Rating: <%= review.rating %> <br>
+  <br>
+  <%end  %>
+  <br>
+  </ul>
+</h6> 
 
 <br>
 <div class="container">
 <%= link_to("Click to Edit", edit_restaurant_path(@restaurant)) %> 
 </div>
 
+<div class="container">
+<%= link_to("Click to add Review", new_restaurant_review_path(@restaurant)) %> 
+</div>
 
 <h4 class="container">
 <a href="/restaurants">Back to all Restaurants</a>
